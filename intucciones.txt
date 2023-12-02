@@ -1,5 +1,11 @@
-(1)//comenzamos con el packet.json 
-npm init --yes 
+ //////////////////// 
+ *primero es git add .
+ *luego es   git commit -m "" 
+ *ultimo es  git push origin main o en este caso git push nuevo-origin main
+
+
+
+(1)//comenzamos con el packet.json             
 
 (2)//framework de node -> express
 $ npm install express --save
