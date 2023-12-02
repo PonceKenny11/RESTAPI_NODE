@@ -1,0 +1,44 @@
+(1)//comenzamos con el packet.json 
+npm init --yes 
+
+(2)//framework de node -> express
+$ npm install express --save
+// modulos , el cors hace comunicacion con el servidor
+$ npm i morgan promise-mysql cors
+
+(3)// instalacion de ts
+npm install -g typescript
+
+comand: tsc 
+
+//crear un archivo ts.config
+tsc --init
+
+//configurar el ts.config
+outDir: "./build"
+
+comand: tsc
+
+//automatizar el tsc en el package.json
+script:
+    "build": "tsc -w" //va observando los cambios del index.ts al index.js
+
+comand: npm run build
+
+(4)//instalacion del nodemon
+npm install -g nodemon
+
+npm i nodemon -D //instalacion en las depedencias
+
+//automatizar la ejecucion de backend 
+script:
+    "dev": "nodemon build/index.js",
+
+comand: npm run dev
+
+*ejecutar ambas scritp de comand
+
+(5)//instalacion de dependencia express
+npm i @types/express -D
+
+(6)
