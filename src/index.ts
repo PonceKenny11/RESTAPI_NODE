@@ -6,6 +6,8 @@ class Server{
     app: Application;
     constructor(){
         this.app = express();
+        this.configurarApp();
+        this.routers_rutas();
     }
 
     //method
@@ -17,7 +19,6 @@ class Server{
 
     }
 
-
     start():void{
             //escuhas obteniendo el port
             this.app.listen(this.app.get('port'), ()=>{
@@ -27,4 +28,5 @@ class Server{
     }
 }
 
-new Server();
+const serve = new Server();
+serve.start();
