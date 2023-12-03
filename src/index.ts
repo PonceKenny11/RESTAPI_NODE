@@ -1,7 +1,9 @@
 import express , { Application} from 'express';
-
+import indexRouter from './routers/indexRouter';
+import gamesRouter from './routers/gameRouter';
 
 class Server{
+
 
     app: Application;
     constructor(){
@@ -16,7 +18,8 @@ class Server{
     }
 
     routers_rutas():void{
-
+        this.app.use(indexRouter);
+        this.app.use('/api/game',gamesRouter);
     }
 
     start():void{
