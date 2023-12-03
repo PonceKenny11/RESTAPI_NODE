@@ -7,6 +7,8 @@ const express_1 = __importDefault(require("express"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
+        this.configurarApp();
+        this.routers_rutas();
     }
     //method
     configurarApp() {
@@ -21,4 +23,5 @@ class Server {
         });
     }
 }
-new Server();
+const serve = new Server();
+serve.start();
