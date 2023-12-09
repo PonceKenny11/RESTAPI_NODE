@@ -12,7 +12,7 @@ $ npm install express --save
 // modulos , el cors hace comunicacion con el servidor
 $ npm i morgan promise-mysql cors
 
-(3)// instalacion de ts
+(3)// instalacion de ts por cada maquina que se clona del github o usar mejor el docker
 npm install -g typescript
 
 comand: tsc 
@@ -31,7 +31,7 @@ script:
 
 comand: npm run build
 
-(4)//instalacion del nodemon
+(4)//instalacion del nodemon por cada maquina que se clona del github o usar mejor el docker
 npm install -g nodemon
 
 npm i nodemon -D //instalacion en las depedencias
@@ -47,4 +47,5 @@ comand: npm run dev
 (5)//instalacion de dependencia express
 npm i @types/express -D
 
-(6)
+(6)//instalacion de dependencia morgan y cors
+npm i @types/morgan @types/cors -D

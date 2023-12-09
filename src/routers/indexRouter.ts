@@ -1,4 +1,5 @@
 import {Router} from 'express'
+import { indexCo } from '../controllers/indexController';
 
 class IndexRouter{
     public route_ruta: Router = Router();
@@ -8,7 +9,8 @@ class IndexRouter{
     }
 
     config():void{
-        this.route_ruta.get('/', (req, res) => { res.send('Hola Index')});
+        //this.route_ruta.get('/', (req, res) => { res.send('Hola Index')});
+        this.route_ruta.get('/', indexCo.GetIndex);
     }
 }
 
