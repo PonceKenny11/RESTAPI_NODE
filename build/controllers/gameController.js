@@ -32,8 +32,8 @@ class GamesController {
     getListGames(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const listGame = yield database_1.default.promise().query('SELECT * FROM games');
-            res.json({ message: 'Mostrando List Games' });
-            res.json(listGame);
+            res.json(listGame[0]);
+            return listGame;
         });
     }
     getOnetGame(req, res) {

@@ -20,8 +20,8 @@ export class GamesController {
     //GET games
     async getListGames (req:Request, res:Response){
         const listGame = await pool.promise().query('SELECT * FROM games');
-        res.json({message: 'Mostrando List Games'});
-        res.json(listGame);
+        res.json(listGame[0]);
+        return listGame;
     }
 
     async getOnetGame (req:Request, res:Response):Promise<any>{
