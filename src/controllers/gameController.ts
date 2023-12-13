@@ -19,9 +19,13 @@ export class GamesController {
     
     //GET games
     async getListGames (req:Request, res:Response){
-        const listGame = await pool.promise().query('SELECT * FROM games');
-        res.json(listGame[0]);
-        return listGame;
+        try {
+            const [listGame] = await pool.promise().query('SELECT * FROM games');
+            res.json(listGame);
+        } catch (error) {
+            console.error('Error fetching games:', error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
     }
 
     async getOnetGame (req:Request, res:Response):Promise<any>{

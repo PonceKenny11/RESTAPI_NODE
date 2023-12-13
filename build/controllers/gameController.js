@@ -31,9 +31,14 @@ class GamesController {
     //GET games
     getListGames(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const listGame = yield database_1.default.promise().query('SELECT * FROM games');
-            res.json(listGame[0]);
-            return listGame;
+            try {
+                const [listGame] = yield database_1.default.promise().query('SELECT * FROM games');
+                res.json(listGame);
+            }
+            catch (error) {
+                console.error('Error fetching games:', error);
+                res.status(500).json({ error: 'Internal Server Error' });
+            }
         });
     }
     getOnetGame(req, res) {
